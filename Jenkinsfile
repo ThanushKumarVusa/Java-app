@@ -2,14 +2,13 @@ pipeline {
    agent any
    
    tools {
-      jdk 'Java-17'  // This must match the JDK name configured in Jenkins
-      maven 'Maven'   // Optional: specify Maven version if needed
+      jdk 'jdk17'  // This must match the JDK name configured in Jenkins   // Optional: specify Maven version if needed
    }
    
    environment {
       IMAGE_NAME = "java-app"
       IMAGE_TAG = "latest"
-      JAVA_HOME = tool 'Java-17'  // Explicitly set JAVA_HOME
+      JAVA_HOME = tool 'jdk17'  // Explicitly set JAVA_HOME
       PATH = "${JAVA_HOME}/bin:${env.PATH}"
    }
    
